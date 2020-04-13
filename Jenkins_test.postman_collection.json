@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "c2ea5995-aadf-4112-9fa7-2f8ea4682e08",
+		"name": "Jenkins_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cookie_toru Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b0b6520-1c05-49fa-b79f-7e93e00c04a6",
+						"exec": [
+							"tests['body has result']=responseBody.has(\"result\")",
+							"",
+							"postman.setEnvironmentVariable(\"Cookie\", JSON.parse(responseBody).result.cookie);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "return_die_message",
+						"value": "1-H",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"method\": \"DA.JSONAPI.Common.login\",\r\n  \"params\": [{\r\n    \"domain\": \"https://127.0.0.1\",\r\n    \"user\":\r\n    \"test01\",\r\n    \"pass\": \"test01\"\r\n  }],\r\n  \"id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/jsonapi",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"jsonapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_SiteTemplates Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4c3c2c88-f316-467d-9480-84f6e0948bd0",
+						"exec": [
+							"var Data=JSON.parse(responseBody)",
+							"",
+							"tests['get 9 site templates']=Data.length == 9",
+							"",
+							"var flag=1",
+							"",
+							"for(var i=0;i<Data.length;i++)",
+							"{",
+							"    if(Data[i].template_id != i+1)",
+							"    {",
+							"        flag=0",
+							"    }",
+							"}",
+							"",
+							"tests['the templates has temlate_id']=flag == 1",
+							"",
+							"postman.setEnvironmentVariable(\"templateid\",Data[3].template_id)",
+							"postman.setEnvironmentVariable(\"templatetitle\",Data[0].title)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/api/cms/site-templates/",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"cms",
+						"site-templates",
+						""
+					]
+				},
+				"description": "サイトテンプレート一覧を取得"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
