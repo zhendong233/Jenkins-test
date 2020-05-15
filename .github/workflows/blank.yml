@@ -23,10 +23,9 @@ jobs:
     - name: Newman Action
       uses: matt-ball/newman-action@0.0.28
       with:
-        collection: Jenkins_test.postman_collection.json  
-
+        collection: Jenkins_test.postman_collection.json
     # Runs a single command using the runners shell
     - name: Run
       shell: bash 
-      run: newman run 
+      run: newman run Jenkins_test.postman_collection.json
 
