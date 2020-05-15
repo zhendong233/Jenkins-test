@@ -46,9 +46,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/jsonapi",
+					"raw": "https://zzd-490-test.m.diol.jp/jsonapi",
+					"protocol": "https",
 					"host": [
-						"{{domain}}"
+						"zzd-490-test",
+						"m",
+						"diol",
+						"jp"
 					],
 					"path": [
 						"jsonapi"
@@ -92,9 +96,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{domain}}/api/cms/site-templates/",
+					"raw": "https://zzd-490-test.m.diol.jp/api/cms/site-templates/",
+					"protocol": "https",
 					"host": [
-						"{{domain}}"
+						"zzd-490-test",
+						"m",
+						"diol",
+						"jp"
 					],
 					"path": [
 						"api",
