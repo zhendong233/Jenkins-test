@@ -24,5 +24,5 @@ jobs:
       uses: matt-ball/newman-action@0.0.28
       with:
         collection: Jenkins_test.postman_collection.json
-        reporters: cli
+        reporters: junit
 
