@@ -46,10 +46,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://zzd-490-test.m.diol.jp/jsonapi",
+					"raw": "https://zzd-ise-dev.m.diol.jp/jsonapi",
 					"protocol": "https",
 					"host": [
-						"zzd-490-test",
+						"zzd-ise-dev",
 						"m",
 						"diol",
 						"jp"
@@ -84,6 +84,7 @@
 							"}",
 							"",
 							"tests['the templates has temlate_id']=flag == 1",
+							"tests['the templates has new temlate_id']=flag == 2",
 							"",
 							"postman.setEnvironmentVariable(\"templateid\",Data[3].template_id)",
 							"postman.setEnvironmentVariable(\"templatetitle\",Data[0].title)"
@@ -96,10 +97,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://zzd-490-test.m.diol.jp/api/cms/site-templates/",
+					"raw": "https://zzd-ise-dev.m.diol.jp/api/cms/site-templates/",
 					"protocol": "https",
 					"host": [
-						"zzd-490-test",
+						"zzd-ise-dev",
 						"m",
 						"diol",
 						"jp"
